@@ -1,0 +1,447 @@
+/* style.css */
+
+/* nastavení písma, barvy pozadí a zarovnání obsahu pro celou stránku */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+}
+
+/* nastavení velikosti, barvy a okraje nadpisů */
+h1:not(#logo, footer),
+h2:not(#logo, footer) {
+    font-size: 24px;
+    color: #333333;
+    margin: 10px;
+}
+
+/* nastavení barvy, okraje a zarovnání odstavců */
+p:not(#logo, footer) {
+    color: #666666;
+    margin: 10px;
+    text-align: justify;
+}
+
+/* nastavení vzhledu, rozměrů a okraje obrázků */
+img:not(#logo, footer) {
+    border: 1px solid #cccccc;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+
+/* nastavení vzhledu, rozměrů a okraje tlačítek */
+button:not(#logo, footer) {
+    border: none;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* nastavení vzhledu, rozměrů a okraje formulářů a jejich prvků */
+form:not(#logo, footer) {
+    border: 1px solid #cccccc;
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+label:not(#logo, footer) {
+    display: block;
+    margin: 10px;
+}
+
+input:not(#logo, footer) {
+    display: block;
+    margin: 10px;
+    width: 80%;
+}
+
+/* nastavení vzhledu, rozměrů a okraje tabulek a jejich prvků */
+table:not(#logo, footer) {
+    border: 1px solid #cccccc;
+    width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+    display: none;
+}
+
+th:not(#logo, footer),
+td:not(#logo, footer) {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/* nastavení vzhledu, barvy a okraje zpráv o chybách a úspěchu */
+.error:not(#logo, footer) {
+    color: #ff0000;
+    margin: 10px;
+}
+
+.success:not(#logo, footer) {
+    color: #00ff00;
+    margin: 10px;
+}
+
+/* nastavení zobrazení a skrytí formuláře a tabulky pomocí JavaScriptu */
+#form:not(#logo, footer) {
+    display: none;
+}
+
+#table:not(#logo, footer) {
+    display: none;
+}
+
+#logo {
+    top: 0 !important;
+    border: none !important;
+    width: 200px !important;
+    height: 100px !important;
+    max-height: 200px !important;
+    margin: 20px !important;
+}
+
+/* Přidání stylování pro navbar zde */
+.navbar {
+    position: fixed;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: auto;
+    margin-left: -8px;
+    z-index: 100;
+    top: 0;
+    max-height: 80px;
+    text-align: left;
+    overflow: hidden; /* Add overflow hidden to contain floated elements */
+}
+
+.navbar h2,
+h2[class~="navbar_h2"] {
+    display: inline-block; /* Display the heading inline within the navbar */
+    vertical-align: middle; /* Align heading vertically within the navbar */
+    margin: 0; /* Reset margin to eliminate extra space */
+    padding: 10px;
+}
+
+img[class~="logo"] {
+    top: 0 !important;
+    border: none !important;
+    width: 100px !important;
+    height: 50px !important;
+    max-height: 50px !important;
+    margin: 20px !important;
+}
+
+@media (max-width: 1200px) {
+
+    #logo,
+    img[class~="logo"] {
+        width: 100px !important;
+        /* Upravuje šířku */
+        height: auto !important;
+        /* Zachovává poměr stran */
+        position: static !important;
+        /* Odstraňuje pevné pozicování */
+    }
+}
+
+img[class~="logo_cb"] {
+    bottom: 0 !important;
+    left: 0 !important;
+    border: none !important;
+    width: 200px !important;
+    height: 100px !important;
+    max-height: 200px !important;
+    margin: 20px !important;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    margin-top: auto;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 100%; /* Ensure the footer spans the full width */
+}
+
+footer p {
+    text-align: center;
+    color: #ffffff !important;
+}
+
+footer a {
+    color: #ffffff !important;
+}
+
+footer p[class~="version"] {
+    color: #808080 !important;
+    font-size: 12px !important;
+}
+
+footer a[class~="version"] {
+    color: #808080 !important;
+    font-size: 12px !important;
+}
+
+.logo_cb {
+    width: 100px;
+    height: 100px;
+    justify-content: start;
+}
+
+.version {
+    color: #808080 !important;
+    font-size: 12px !important;
+}
+
+.reserved {
+    font-weight: bold !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+}
+
+/* Vzhled kontejneru pro dárky */
+.gift-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Dodatečné styly pro modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    word-wrap: break-word;
+    /* Přidání vlastnosti pro lámání dlouhých slov */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Nový styl pro obrázky v dárcích bez obrázků */
+.gift img {
+    border: 1px solid #cccccc;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 8px;
+    /* Zaoblené rohy */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Stíny */
+}
+
+.gift img.no-image {
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    /* Zaoblené rohy */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Stíny */
+}
+
+/* Dodatečné styly pro modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    /* Zaoblené rohy */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Nový styl pro obrázky v dárcích bez obrázků */
+.gift img {
+    border: 1px solid #cccccc;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 8px;
+    /* Zaoblené rohy */
+}
+
+.gift img.no-image {
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    /* Zaoblené rohy */
+}
+
+/* Nové styly pro tlačítka a inputy */
+button,
+input[type="submit"],
+input[type="email"],
+input[type="tel"] {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    /* Zaoblené rohy */
+    cursor: pointer;
+}
+
+button.reserve,
+input[type="submit"] {
+    background-color: #4caf50;
+    /* Zelená barva */
+    color: white;
+}
+
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    /* Zaoblené rohy */
+}
+
+
+.gift-title {
+    max-width: 15ch;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: normal;
+    /* Change this line / hyphens: auto; / Add this line */
+}
+ h2.gift-title {
+     white-space: pre-wrap;
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+     word-break: normal;
+      hyphens: auto;
+ }
+
+
+ /* Responsive adjustments for logo and navbar at smaller screen sizes */
+ @media (max-width: 768px) {
+    #logo,
+    img[class~="logo"] {
+        width: 80px !important;
+        height: auto !important;
+    }
+
+    .navbar h2,
+    h2[class~="navbar_h2"] {
+        display: block; /* Change display to block on smaller screens */
+        text-align: center; /* Center the text within the block */
+        margin-top: 5px !important;
+        padding: 5px !important;
+    }
+}
+
+/* Responsive adjustments for forms and tables */
+@media (max-width: 600px) {
+    form:not(#logo, footer) {
+        width: 80%;
+    }
+
+    table:not(#logo, footer) {
+        width: 100%;
+    }
+}
+
+/* Responsive adjustments for gift images */
+@media (max-width: 400px) {
+    .gift img,
+    .gift img.no-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Styl pro kontejner dárků */
+.gifts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Mezera mezi dárky */
+}
+
+/* Styl pro jednotlivé dárky */
+.gift-item {
+    flex: 1 1 calc(33.333% - 20px); /* Tři dárky v řadě s mezerou 20px */
+    border: 1px solid #ddd; /* Přidání okraje pro lepší vzhled */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Lehký stín pro hloubku */
+}
