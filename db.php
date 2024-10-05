@@ -11,12 +11,7 @@ function connect_db() {
     // Database connection details
     // Add your database details here
 
-    if ($_SERVER['HTTP_HOST'] == "cb.cz") {
-        $servername = "octo-service";
-        $username = "neratovice";
-        $password = "ahmo4aku";
-        $dbname = "neratovice_db";
-    } elseif ($_SERVER['HTTP_HOST'] == "localhost") {
+    } if ($_SERVER['HTTP_HOST'] == "localhost") {
         $servername = "localhost:3306";
         $username = "root";
         $password = "";
